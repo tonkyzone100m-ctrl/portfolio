@@ -35,11 +35,14 @@ function About() {
         </div>
 
         <div className="about-details">
-          <div className="detail-item">
-            <span>Education</span>
-            <strong>Information Technology</strong>
-            <small>Karongi College · Year 2</small>
-          </div>
+<div className="detail-item">
+  <span>Education</span>
+  <strong>Information Technology</strong>
+  <small>RP Karongi College · Year 2</small>
+</div>
+
+
+
 
           <div className="detail-item">
             <span>Focus</span>
