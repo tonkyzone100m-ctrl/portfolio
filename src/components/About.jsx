@@ -44,6 +44,7 @@ function About() {
 
 
 
+
           <div className="detail-item">
             <span>Focus</span>
             <strong>Software & Networking</strong>
