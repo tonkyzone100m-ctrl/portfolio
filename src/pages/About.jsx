@@ -3,28 +3,23 @@ function About() {
     <section id="about" className="about-section">
       <div className="section-heading">
         <p>ABOUT ME</p>
+
         <h2>Technology is my field. Problem-solving is my focus.</h2>
       </div>
 
       <div className="about-content">
         <div className="about-text">
-          
-
-
-
-<p>
-  I'm an IT-focused developer interested in software development,
-  networking, databases, and practical technology solutions.
-  I enjoy turning real-world problems into useful and functional
-  digital systems.
-</p>
-
+          <p>
+            I'm an IT-focused developer interested in software development,
+            networking, databases, and practical technology solutions.
+            I enjoy turning real-world problems into useful and functional
+            digital systems.
+          </p>
 
           <p>
-            My current development work includes building web
-            applications with JavaScript, React, PHP, and MySQL,
-            while continuing to strengthen my knowledge of networking,
-            Linux, and IT infrastructure.
+            My current development work includes building web applications
+            with JavaScript, React, PHP, and MySQL, while continuing to
+            strengthen my knowledge of networking, Linux, and IT infrastructure.
           </p>
 
           <p>
@@ -35,15 +30,11 @@ function About() {
         </div>
 
         <div className="about-details">
-<div className="detail-item">
-  <span>Education</span>
-  <strong>Information Technology</strong>
-  <small>RP Karongi College · Year 2</small>
-</div>
-
-
-
-
+          <div className="detail-item">
+            <span>Education</span>
+            <strong>Information Technology</strong>
+            <small>RP Karongi College · Year 2</small>
+          </div>
 
           <div className="detail-item">
             <span>Focus</span>
@@ -59,7 +50,7 @@ function About() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default About
+export default About;

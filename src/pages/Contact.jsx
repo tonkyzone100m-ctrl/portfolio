@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Contact() {
   return (
     <section id="contact" className="contact-section">
@@ -11,8 +13,7 @@ function Contact() {
           networking, IT projects, collaboration, and
           opportunities to learn and build.
         </p>
-
-        <div className="contact-actions">
+<div className="contact-actions">
           <a
             href="https://mail.google.com/mail/u/0/#inbox"
             className="primary-button"
@@ -28,6 +29,7 @@ function Contact() {
             GitHub
           </a>
         </div>
+       
       </div>
     </section>
   );

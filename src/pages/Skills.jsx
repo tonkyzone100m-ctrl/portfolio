@@ -3,10 +3,12 @@ function Skills() {
     <section id="skills" className="skills-section">
       <div className="section-heading">
         <p>TECHNICAL SKILLS</p>
+
         <h2>Technologies I work with.</h2>
       </div>
 
       <div className="skills-grid">
+
         <article className="skill-card">
           <span className="skill-number">01</span>
 
@@ -78,9 +80,10 @@ function Skills() {
             <span>Figma</span>
           </div>
         </article>
+
       </div>
     </section>
-  )
+  );
 }
 
-export default Skills
+export default Skills;
