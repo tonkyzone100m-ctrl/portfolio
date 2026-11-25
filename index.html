@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
 
@@ -7,15 +7,60 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-<link rel="icon" type="image/png" href="/alain-fils-icon.png" />
+
+    <meta name="theme-color" content="#090D16" />
+
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("portfolio-theme");
+          var theme =
+            stored === "light" || stored === "dark"
+              ? stored
+              : window.matchMedia("(prefers-color-scheme: light)").matches
+                ? "light"
+                : "dark";
+          document.documentElement.classList.remove("light", "dark");
+          document.documentElement.classList.add(theme);
+        } catch (error) {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>
+      Alain Fils Niyomucamanza | Full-Stack &amp; Systems Developer
+    </title>
+
     <meta
       name="description"
-      content="Alain Fils — IT, software development, networking, databases, and practical technology solutions."
+      content="Alain Fils Niyomucamanza — full-stack and systems developer based in Kigali, Rwanda. React, TypeScript, Python, PHP, PostgreSQL, and IT infrastructure."
     />
 
     <meta
       name="author"
-      content="Alain Fils"
+      content="Alain Fils Niyomucamanza"
+    />
+
+    <meta name="robots" content="index, follow" />
+
+    <link
+      rel="canonical"
+      href="https://portfolio-sigma-black-aa6aolxx26.vercel.app/"
+    />
+
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
+      rel="stylesheet"
     />
 
     <!-- Open Graph / Social Sharing -->
@@ -23,17 +68,17 @@
 
     <meta
       property="og:title"
-      content="Alain Fils | IT • Software • Networking"
+      content="Alain Fils Niyomucamanza | Full-Stack &amp; Systems Developer"
     />
 
     <meta
       property="og:description"
-      content="Alain Fils — IT, software development, networking, databases, and practical technology solutions."
+      content="Full-stack and systems developer in Kigali, Rwanda. Building practical software, data, and IT solutions."
     />
 
     <meta
       property="og:url"
-      content="https://portfolio-3tjo6sjnw-alain-fils.vercel.app/"
+      content="https://portfolio-sigma-black-aa6aolxx26.vercel.app/"
     />
 
     <meta
@@ -41,34 +86,28 @@
       content="Alain Fils Portfolio"
     />
 
-    <!-- Social Preview Image -->
     <meta
       property="og:image"
-      content="https://portfolio-3tjo6sjnw-alain-fils.vercel.app/og-image.png"
+      content="https://portfolio-sigma-black-aa6aolxx26.vercel.app/og-image.png"
     />
 
     <!-- Twitter / X -->
-    <meta
-      name="twitter:card"
-      content="summary_large_image"
-    />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <meta
       name="twitter:title"
-      content="Alain Fils | IT • Software • Networking"
+      content="Alain Fils Niyomucamanza | Full-Stack &amp; Systems Developer"
     />
 
     <meta
       name="twitter:description"
-      content="Alain Fils — IT, software development, networking, databases, and practical technology solutions."
+      content="Full-stack and systems developer in Kigali, Rwanda. Building practical software, data, and IT solutions."
     />
 
     <meta
       name="twitter:image"
-      content="https://portfolio-3tjo6sjnw-alain-fils.vercel.app/og-image.png"
+      content="https://portfolio-sigma-black-aa6aolxx26.vercel.app/og-image.png"
     />
-
-    <title>Alain Fils | IT • Software • Networking</title>
   </head>
 
   <body>

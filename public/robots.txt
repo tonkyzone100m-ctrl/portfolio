@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://portfolio-sigma-black-aa6aolxx26.vercel.app/sitemap.xml

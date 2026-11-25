@@ -1,25 +1,37 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter,
+  Outlet,
+  Route,
+  Routes,
+} from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Gallery from "./components/Gallery";
 
 import Home from "./pages/Hero";
 import AboutPage from "./pages/About";
 import SkillsPage from "./pages/Skills";
 import ProjectsPage from "./pages/Projects";
+import ProjectCaseStudy from "./pages/ProjectCaseStudy";
 import ContactPage from "./pages/Contact";
-import ReportHubCaseStudy from "./pages/ReportHubCaseStudy";
-import CVMakerCaseStudy from "./pages/CVMakerCaseStudy";
-import Gallery from "./components/Gallery";
+import NotFound from "./pages/NotFound";
 
-import "./App.css";
-
-function Layout({ children }) {
+function Layout() {
   return (
     <>
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-[10px] focus:border focus:border-accent focus:bg-accent focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-accent-ink"
+      >
+        Skip to content
+      </a>
+
       <Navbar />
 
-      <main>{children}</main>
+      <main id="main">
+        <Outlet />
+      </main>
 
       <Footer />
     </>
@@ -30,92 +42,19 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-
-        <Route
-          path="/"
-          element={
-            <Layout>
-              <Home />
-            </Layout>
-          }
-        />
-
-        <Route
-          path="/about"
-          element={
-            <Layout>
-              <AboutPage />
-            </Layout>
-          }
-        />
-
-        <Route
-          path="/skills"
-          element={
-            <Layout>
-              <SkillsPage />
-            </Layout>
-          }
-        />
-
-        <Route
-          path="/projects"
-          element={
-            <Layout>
-              <ProjectsPage />
-            </Layout>
-          }
-        />
-
-        <Route
-          path="/contact"
-          element={
-            <Layout>
-              <ContactPage />
-            </Layout>
-          }
-        />
-
-        <Route
-          path="/projects/reporthub"
-          element={
-            <Layout>
-              <ReportHubCaseStudy />
-            </Layout>
-          }
-        />
-
-        <Route
-          path="/pages/CVMakerCaseStudy"
-          element={
-            <Layout>
-              <CVMakerCaseStudy />
-            </Layout>
-          }
-        />
-
- <Route
-          path="/pages/Gallery"
-          element={
-            <Layout>
-              <Gallery />
-            </Layout>
-          }
-        />
-
-
-        <Route
-          path="*"
-          element={
-            <Layout>
-              <div className="not-found">
-                <h1>404</h1>
-                <p>Page not found.</p>
-              </div>
-            </Layout>
-          }
-        />
-
+        <Route element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<AboutPage />} />
+          <Route path="skills" element={<SkillsPage />} />
+          <Route path="projects" element={<ProjectsPage />} />
+          <Route
+            path="projects/:slug"
+            element={<ProjectCaseStudy />}
+          />
+          <Route path="gallery" element={<Gallery />} />
+          <Route path="contact" element={<ContactPage />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

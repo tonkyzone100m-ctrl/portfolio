@@ -1,89 +1,130 @@
-function Skills() {
+import { usePageMeta } from "../hooks/usePageMeta";
+import {
+  card,
+  container,
+  pageShell,
+  pageTitle,
+  sectionLabel,
+  sectionLead,
+  techTag,
+} from "../lib/styles";
+
+const skillGroups = [
+  {
+    number: "01",
+    title: "Software Development",
+    description:
+      "Building responsive, accessible interfaces and application behaviour with modern front-end tooling.",
+    tags: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Tailwind CSS",
+    ],
+  },
+  {
+    number: "02",
+    title: "Backend & Data",
+    description:
+      "Designing server-side logic, REST APIs, and relational schemas for persistent application data.",
+    tags: [
+      "Node.js",
+      "Express",
+      "Prisma",
+      "PHP",
+      "Python",
+      "FastAPI",
+      "MySQL",
+      "PostgreSQL",
+    ],
+  },
+  {
+    number: "03",
+    title: "Networking & Systems",
+    description:
+      "Working with computer networking, Linux, system administration, and IT infrastructure fundamentals.",
+    tags: [
+      "Networking",
+      "Linux",
+      "Windows Server",
+      "System Administration",
+    ],
+  },
+  {
+    number: "04",
+    title: "Tools & Workflow",
+    description:
+      "Using modern tooling to develop, version, deploy, and collaborate on software projects.",
+    tags: [
+      "Git",
+      "GitHub",
+      "Vite",
+      "REST APIs",
+      "Neon",
+      "Figma",
+    ],
+  },
+];
+
+export default function Skills() {
+  usePageMeta({
+    title: "Skills",
+    description:
+      "Technical skills: React, TypeScript, JavaScript, Node.js, Express, Prisma, PHP, Python, FastAPI, MySQL, PostgreSQL, Linux, networking, and system administration.",
+    path: "/skills",
+  });
+
   return (
-    <section id="skills" className="skills-section">
-      <div className="section-heading">
-        <p>TECHNICAL SKILLS</p>
-
-        <h2>Technologies I work with.</h2>
-      </div>
-
-      <div className="skills-grid">
-
-        <article className="skill-card">
-          <span className="skill-number">01</span>
-
-          <h3>Software Development</h3>
-
-          <p>
-            Building responsive web interfaces and application
-            functionality using modern web technologies.
+    <section className={pageShell}>
+      <div className={container}>
+        <div className="max-w-3xl">
+          <p className={sectionLabel}>Technical Skills</p>
+          <h1 className={pageTitle}>
+            Technologies I use to ship working systems.
+          </h1>
+          <p className={sectionLead}>
+            A practical toolkit spanning the front end, backend and data,
+            networking, and the day-to-day workflow behind reliable
+            delivery.
           </p>
+        </div>
 
-          <div className="skill-tags">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-            <span>React</span>
-          </div>
-        </article>
+        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {skillGroups.map((group, index) => {
+            const span =
+              index === 0 || index === 3
+                ? "sm:col-span-2 lg:col-span-2"
+                : "";
 
-        <article className="skill-card">
-          <span className="skill-number">02</span>
+            return (
+              <article
+                key={group.number}
+                className={`${card} ${span} flex h-full flex-col p-5 transition-colors hover:border-border-strong sm:p-6`}
+              >
+                <span className="font-mono text-xs font-semibold tracking-[0.14em] text-accent sm:text-sm">
+                  {group.number}
+                </span>
+                <h2 className="mt-3 text-lg font-semibold text-ink sm:text-xl">
+                  {group.title}
+                </h2>
+                <p className="mt-2 flex-1 text-base leading-relaxed text-muted">
+                  {group.description}
+                </p>
 
-          <h3>Backend & Database</h3>
-
-          <p>
-            Developing server-side functionality and working with
-            relational databases to store and manage application data.
-          </p>
-
-          <div className="skill-tags">
-            <span>PHP</span>
-            <span>MySQL</span>
-            <span>SQL</span>
-            <span>API Development</span>
-          </div>
-        </article>
-
-        <article className="skill-card">
-          <span className="skill-number">03</span>
-
-          <h3>Networking & Systems</h3>
-
-          <p>
-            Exploring computer networking, Linux, system
-            administration, and IT infrastructure.
-          </p>
-
-          <div className="skill-tags">
-            <span>Networking</span>
-            <span>Linux</span>
-            <span>Windows Server</span>
-            <span>System Administration</span>
-          </div>
-        </article>
-
-        <article className="skill-card">
-          <span className="skill-number">04</span>
-
-          <h3>Development Tools</h3>
-
-          <p>
-            Using modern tools and workflows to design, develop,
-            manage, and collaborate on software projects.
-          </p>
-
-          <div className="skill-tags">
-            <span>Git</span>
-            <span>GitHub</span>
-            <span>VS Code</span>
-            <span>Figma</span>
-          </div>
-        </article>
-
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {group.tags.map((tag) => (
+                    <span key={tag} className={techTag}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
 }
-
-export default Skills;
